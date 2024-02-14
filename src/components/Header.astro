@@ -1,0 +1,39 @@
+---
+import logo from "../images/logo.svg?raw";
+import HamburgerMenu from "../images/icon-hamburger.svg";
+import ArrowDown from "../images/icon-arrow-down.svg";
+---
+<header class="px-6 bg-hero-mobile bg-no-repeat bg-cover bg-bottom sm:bg-hero-desktop text-white">
+    <div class="flex justify-between items-center py-8">
+        <div class="sm:max-w-44">
+            <Fragment set:html={logo}/>
+        </div>
+        <div class="relative">
+            <button id="toggle" class="md:hidden">
+                <img src={HamburgerMenu.src} alt="">
+            </button>
+            <div id="menu" class="absolute right-0 top-16 hidden flex-col items-center gap-y-8 gap-x-11 w-[87vw] max-w-96 pt-16 pb-10 bg-white [clip-path:polygon(0_6%,93%_6%,100%_0,100%_98%,0_98%,0%_50%)] md:static md:flex md:flex-row md:w-full md:max-w-max md:p-0 md:bg-transparent md:[clip-path:none] ">
+                <ul class="list-none flex flex-col gap-y-10 text-dark-grayish-blue md:text-inherit md:flex-row items-center gap-x-11 font-barlow text-lg ">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                </ul>
+                <button class="px-6 py-4 bg-yellow md:bg-white font-fraunces text-sm font-bold text-black rounded-full uppercase md:hover:text-white md:hover:bg-white/30">contact</button>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-y-14 pt-14 pb-40 md:gap-y-24 md:pt-36 md:pb-[23rem]">
+        <h1 class="font-fraunces font-black text-[2.5rem] text-white text-center leading-snug uppercase tracking-[.17em] sm:text-6xl">we are creatives</h1>
+        <img src={ArrowDown.src} alt=""/>
+    </div>
+</header>
+
+<script>
+    const toggle = document.querySelector("#toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        menu.style.display = !menu.checkVisibility() ? "flex" : "none";
+    })
+</script>

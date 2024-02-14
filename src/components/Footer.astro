@@ -1,0 +1,26 @@
+---
+import logo from "../images/logo.svg?raw";
+import facebook from "../images/icon-facebook.svg?raw";
+import instagram from "../images/icon-instagram.svg?raw";
+import twitter from "../images/icon-twitter.svg?raw";
+import pinterest from "../images/icon-pinterest.svg?raw";
+---
+
+<footer class="relative flex flex-col items-center pt-16 pb-20 bg-[#90d4c5] text-[#2C7566] lg:py-[4.5rem]">
+    <Fragment set:html={logo} />
+    <ul class="list-none flex items-center gap-x-12 pt-11 pb-24 font-barlow text-sm text-dark-moderate-cyan">
+        <li><a class="hover:text-white" href="#">About</a></li>
+        <li><a class="hover:text-white" href="#">Services</a></li>
+        <li><a class="hover:text-white" href="#">Projects</a></li>
+    </ul>
+    <div class="flex gap-x-6">
+        <button class="text-[#2C7566] hover:text-white"><Fragment set:html={facebook} /></button>
+        <button class="text-[#2C7566] hover:text-white"><Fragment set:html={instagram} /></button>
+        <button class="text-[#2C7566] hover:text-white"><Fragment set:html={twitter} /></button>
+        <button class="text-[#2C7566] hover:text-white"><Fragment set:html={pinterest} /></button>
+    </div>
+    <div class="absolute bottom-1 text-xs">
+        Challenge by <a class="text-[hsl(228,_45%,_44%)]" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a class="text-[hsl(228,_45%,_44%)]" href="https://www.frontendmentor.io/profile/nadimalid">Nadim</a>.
+    </div>
+</footer>

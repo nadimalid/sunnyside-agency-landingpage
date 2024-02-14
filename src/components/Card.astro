@@ -1,0 +1,14 @@
+---
+const {image, content, color} = Astro.props
+---
+
+<div class="relative w-full md:basis-2/4">
+    <picture>
+        <source srcset={image.desktop} media="(min-width: 550px)">
+        <img class="w-full" src={image.mobile} alt={image.alt}>
+    </picture>
+    <div class=`absolute bottom-16 flex flex-col gap-y-9 w-full items-center ${color} md:bottom-5 md:gap-y-2 xl:bottom-16 xl:gap-y-9`>
+        <h3 class="font-fraunces text-[1.8rem] font-black ">{ content.header }</h3>
+        <p class="max-w-[38ch] font-barlow font-semibold text-center">{ content.description }</p>
+    </div>
+</div>

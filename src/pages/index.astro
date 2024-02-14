@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro"
+import TestimonialCard from "../components/TestimonialCard.astro";
+import Galary from "../components/Galary.astro";
+import Footer from "../components/Footer.astro";
+
+import DesktopEgg from "../images/desktop/image-transform.jpg"
+import MobileEgg from "../images/mobile/image-transform.jpg"
+import DesktopCup from "../images/desktop/image-stand-out.jpg";
+import MobileCup from "../images/mobile/image-stand-out.jpg";
+import DesktopCherry from "../images/desktop/image-graphic-design.jpg";
+import MobileCherry from "../images/mobile/image-graphic-design.jpg";
+import DesktopMandarin from "../images/desktop/image-photography.jpg";
+import mobileMandarin from "../images/mobile/image-photography.jpg";
+import Emily from "../images/image-emily.jpg";
+import Thomas from "../images/image-thomas.jpg"
+import Jennie from "../images/image-jennie.jpg"
+---
+
+<Layout>
+    <main>
+        <Section 
+            content = {{
+                "header": "Transform your brand",
+                "description": "We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.",
+            }}
+            reverse = {true}
+            image = {{
+                "desktop": DesktopEgg.src,
+                "mobile": MobileEgg.src,
+                "alt": ""
+            }}
+            extraStyle = "after:bg-yellow/30 hover:after:bg-yellow"
+        />
+        <Section 
+            content = {{
+                "header": "Stand out to the right audience",
+                "description": "Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.",
+            }}
+            reverse = {false}
+            image = {{
+                "desktop": DesktopCup.src,
+                "mobile": MobileCup.src,
+                "alt": ""
+            }}
+            extraStyle = "after:bg-soft-red/30 hover:after:bg-soft-red"
+        />
+        <div class="flex flex-col w-full md:flex-row">
+            <Card 
+                image = {{
+                    "desktop": DesktopCherry.src,
+                    "mobile": MobileCherry.src,
+                    "alt": ""
+                    }} 
+                content = {{
+                    "header": "Graphic design",
+                    "description": "Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention."
+                }}
+                color = "text-dark-desaturated-cyan"
+            />
+            <Card 
+                image = {{
+                    "desktop": DesktopMandarin.src,
+                    "mobile": mobileMandarin.src,
+                    "alt": ""
+                    }}
+                content = {{ 
+                    "header": "Photography",
+                    "description": "Increase your credibility by getting the most stunning, high-quality photos that improve your business image."
+                }}
+                color = "text-dark-blue"
+            />
+        </div>
+       <div class="flex flex-col items-center gap-y-16 w-full pt-11 pb-24 bg-soft-red/[.03] xl:gap-y-20 xl:py-40">
+            <h4 class="font-fraunces font-black text-lg text-grayish-blue tracking-[.20em] uppercase">Client testimonials</h4>
+            <div class="flex flex-col gap-y-16  md:flex-row md:px-7 md:gap-x-11">
+                <TestimonialCard
+                    content = {{
+                        "avatar": Emily.src,
+                        "testimony": "We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.",
+                        "name": "Emily R.",
+                        "position": "Marketing Director"
+                    }}
+                />
+                <TestimonialCard
+                    content = {{
+                        "avatar": Thomas.src,
+                        "testimony": "Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.",
+                        "name": "Thomas S.",
+                        "position": "Chief Operating Officer"
+                    }}
+                />
+                <TestimonialCard
+                    content = {{
+                        "avatar": Jennie.src,
+                        "testimony": "Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!",
+                        "name": "Jennie F.",
+                        "position": "Business Owner"
+                    }}
+                />
+            </div>
+        </div>
+        <Galary />
+    </main>
+    <Footer />
+</Layout>

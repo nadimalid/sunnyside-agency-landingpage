@@ -1,0 +1,29 @@
+---
+import Milkbottles from "../images/mobile/image-gallery-milkbottles.jpg";
+import DesktopMilkbottles from "../images/desktop/image-gallery-milkbottles.jpg";
+import Orange from "../images/mobile/image-gallery-orange.jpg";
+import DesktopOrange from "../images/desktop/image-gallery-orange.jpg";
+import Cone from "../images/mobile/image-gallery-cone.jpg";
+import DesktopCone from "../images/desktop/image-gallery-cone.jpg";
+import SugarCubes from "../images/mobile/image-gallery-sugar-cubes.jpg";
+import DesktopSugarCubes from "../images/desktop/image-gallery-sugarcubes.jpg";
+---
+
+<div class="grid grid-cols-2 md:grid-cols-4">
+    <picture>
+        <source srcset={DesktopMilkbottles.src} media="(min-width:768px)" />
+        <img src={Milkbottles.src} alt="" />
+    </picture>
+    <picture>
+        <source srcset={DesktopOrange.src} media="(min-width:768px)" />
+        <img src={Orange.src} alt="" />
+    </picture>
+    <picture>
+        <source srcset={DesktopCone.src} media="(min-width:768px)" />
+        <img src={Cone.src} alt="" />
+    </picture>
+    <picture>
+        <source srcset={DesktopSugarCubes.src} media="(min-width:768px)" />
+        <img src={SugarCubes.src} alt="" />
+    </picture>
+</div>
